@@ -233,26 +233,14 @@ main .container .hero-img img {
   opacity: 1;
 }
 .special-heading {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-size: 2.5rem;
   color: var(--textColor);
   font-family: "Indie Flower", cursive;
   padding: 10px;
-  font-weight: bold;
-  position: relative;
-  overflow: hidden;
 }
-.special-heading::after {
-  content: "";
-  display: block;
-  width: 50px; /* Adjust the width of the underline */
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: var(--thirdColor);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 .skills .progress {
   padding: 15px;
   width: 100%;
