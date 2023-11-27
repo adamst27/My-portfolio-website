@@ -192,6 +192,7 @@ main .container .hero-img img {
   border: 1px solid;
   transition: 0.3s linear;
   cursor: pointer;
+  box-shadow: 4px 6px;
 }
 .contact-button a {
   text-decoration: none;
