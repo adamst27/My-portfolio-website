@@ -1,16 +1,17 @@
 .light-theme {
-  --backgroundColor: rgb(201, 168, 231);
-  --secondaryColor: rgb(105, 50, 153);
-  --thirdColor: rgb(125, 32, 255);
-  --textColor: rgb(32, 26, 37);
-  --secondTextColor: rgb(146, 91, 1);
+  --backgroundColor: #ffffff;
+  --secondaryColor: #1200ff;
+  --thirdColor: #c0d4a5;
+  --textColor: #000000;
+  --secondTextColor: rgb(241, 174, 174);
 }
 .dark-theme {
   --backgroundColor: rgb(36, 29, 36);
-  --secondaryColor: rgb(105, 50, 153);
-  --thirdColor: rgb(53, 22, 97);
+  --secondaryColor: rgb(105, 57, 182);
+  --thirdColor: rgb(145, 93, 219);
   --textColor: rgb(205, 203, 207);
   --secondTextColor: rgb(150, 116, 63);
+  --clr-bg: hsl(323 21% 16%);
 }
 * {
   box-sizing: border-box;
@@ -234,12 +235,15 @@ main .container .hero-img img {
   opacity: 1;
 }
 .special-heading {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--textColor);
-  font-family: "Indie Flower", cursive;
-  padding: 10px;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .skills .progress {
@@ -248,7 +252,6 @@ main .container .hero-img img {
   background-color: #ccc;
   margin: 25px 0;
   position: relative;
-  border-radius: 10px;
 }
 .skills .progress span {
   position: absolute;
@@ -266,7 +269,7 @@ section.skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
-  align-items: center;
+
   grid-gap: 30px;
   position: relative;
 }
@@ -315,26 +318,32 @@ section.skills {
     width: calc(90px * 3);
   }
 }
-.services {
+section.services {
   background-color: var(--backgroundColor);
 }
-.services .container .cards {
+.services .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 150px;
+  grid-gap: 10px;
 }
-.services .container .cards .card {
+.services .container .card {
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  transform: translateY(10px);
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  color: white;
   position: relative;
   transition: transform 1500ms linear;
-
   transform-style: preserve-3d;
+  background: var(--secondaryColor);
+  box-shadow: 6px 5px;
 }
-.services .container .cards .card:hover {
+.services .container .card:hover {
   cursor: pointer;
   transform: rotateY(180deg);
 }
@@ -346,11 +355,27 @@ section.skills {
   backface-visibility: hidden;
 }
 .back {
+  text-align: center;
+  padding: 10px;
   transform: rotateY(180deg);
 }
 .back p {
   padding: 10px;
 }
-.services .cards .card .serv-text {
+.services .card .serv-text {
   margin-top: 20px;
+  padding: 10px;
+}
+.services .card i {
+  margin-top: 10px;
+}
+@media (max-width: 998px) {
+  .services .container {
+    grid-template-rows: 150px 150px;
+  }
+}
+@media (max-width: 786px) {
+  .services .container {
+    grid-template-rows: 150px 150px 150px;
+  }
 }
