@@ -291,22 +291,18 @@ section.skills {
 .logos-slide {
   display: flex;
   justify-content: center;
-  animation: scroll 40s infinite linear;
-  animation-play-state: running;
-}
-.logos-slide:hover {
-  animation-play-state: paused;
+  animation: scroll 34s infinite linear;
 }
 .logos-slide img {
   margin: 5px;
-  width: 90px;
+  width: 70px;
 }
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100px * 7));
+    transform: translateX(-100%);
   }
 }
 @media (max-width: 777px) {
@@ -318,4 +314,43 @@ section.skills {
   .logos {
     width: calc(90px * 3);
   }
+}
+.services {
+  background-color: var(--backgroundColor);
+}
+.services .container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.services .container .cards .card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 1500ms linear;
+
+  transform-style: preserve-3d;
+}
+.services .container .cards .card:hover {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.back {
+  transform: rotateY(180deg);
+}
+.back p {
+  padding: 10px;
+}
+.services .cards .card .serv-text {
+  margin-top: 20px;
 }
